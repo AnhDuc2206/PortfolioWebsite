@@ -1,15 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LÊ ANH ĐỨC | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .selection-theme::selection { background: black; color: white; }
+    </style>
+</head>
+<body class="min-h-screen bg-white text-black selection-theme">
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Portfolio Website</title>
-    </head>
+    <nav class="py-8 px-6 md:px-12 flex justify-between items-center max-w-5xl mx-auto w-full">
+        <div class="text-lg font-semibold tracking-tighter">LÊ ANH ĐỨC</div>
+        <div class="flex gap-8 text-sm font-medium text-gray-500">
+            <a href="#work" class="hover:text-black transition-colors">WORKS</a>
+            <a href="#about" class="hover:text-black transition-colors">ABOUT</a>
+            <a href="mailto:leanhduc10ca2@gmail.com" class="hover:text-black transition-colors">CONTACT</a>
+        </div>
+    </nav>
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
-  
+    <main>
+        <section class="py-24 px-6 md:px-12 max-w-5xl mx-auto" 
+                 x-data="{ show: false }" x-init="setTimeout(() => show = true, 100)">
+            <div x-show="show" 
+                 x-transition:enter="transition ease-out duration-600"
+                 x-transition:enter-start="opacity-0 translate-y-5"
+                 x-transition:enter-end="opacity-100 translate-y-0">
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-8">
+                    HELLO <br /> 
+                    I AM LÊ ANH ĐỨC.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed">
+                    This is my portfolio.
+                </p>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 px-6 md:px-12 max-w-5xl mx-auto border-t border-gray-100">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <h2 class="text-sm font-bold tracking-widest text-gray-400 uppercase">ABOUT</h2>
+                <div class="text-lg md:text-xl text-gray-700 leading-relaxed space-y-6">
+                    <p>My name is Đức. I am 20 years old.</p>
+                    <p>
+                        I am a student at PTIT. 
+                        My goal is to become a Game Developer. 
+                        Currently learning on how to make games with Unity Game Engine.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="py-24 px-6 md:px-12 max-w-5xl mx-auto border-t border-gray-100">
+            <div class="flex justify-between items-baseline mb-16">
+                <h2 class="text-sm font-bold tracking-widest text-gray-400 uppercase">Upcoming Games</h2>
+                <span class="text-sm text-gray-400">Images courtesy of Tarkov and CoD.</span>
+            </div>
+            
+            <div class="space-y-32">
+                <div class="group block cursor-pointer">
+                    <div class="relative aspect-[16/9] overflow-hidden bg-gray-100 mb-8 rounded-sm">
+                        <img src="https://www.exitlag.com/blog/wp-content/uploads/2024/07/fps-game.webp" 
+                             alt="Survival FPS" 
+                             class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Survival FPS Game</h3>
+                            <p class="text-gray-500 max-w-md">A game where you try to survive an endless horde of enemies.</p>
+                        </div>
+                        <span class="text-sm font-medium text-gray-400">Coming 2026</span>
+                    </div>
+                </div>
+
+                <div class="group block cursor-pointer">
+                    <div class="relative aspect-[16/9] overflow-hidden bg-gray-100 mb-8 rounded-sm">
+                        <img src="https://insider-gaming.com/wp-content/uploads/2023/11/world-at-war-zombies-order-of-release-1024x576.jpeg" 
+                             alt="Zombie Survival" 
+                             class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Round-Based Zombie Survival Game</h3>
+                            <p class="text-gray-500 max-w-md">Shoot zombies and survive.</p>
+                        </div>
+                        <span class="text-sm font-medium text-gray-400">Coming Soon (Hopefully)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-24 px-6 md:px-12 max-w-5xl mx-auto border-t border-gray-100">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Contact.</h2>
+                <a href="mailto:leanhduc10ca2@gmail.com" class="text-lg border-b border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-all">
+                    leanhduc10ca2@gmail.com
+                </a>
+            </div>
+            
+            <div class="flex gap-8 text-sm font-medium text-gray-500">
+                <a href="#" class="hover:text-black transition-colors uppercase">Twitter</a>
+                <a href="#" class="hover:text-black transition-colors uppercase">Github</a>
+                <a href="#" class="hover:text-black transition-colors uppercase">Linkedin</a>
+            </div>
+        </div>
+        
+        <div class="mt-24 text-xs text-gray-400 font-medium">
+            © 2026 LÊ ANH ĐỨC. BUILT WITH FIGMA MAKE.
+        </div>
+    </footer>
+
+</body>
+</html>
